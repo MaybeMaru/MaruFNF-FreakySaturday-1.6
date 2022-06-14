@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				116,
+				-36
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "IdlePicoDie",
+			"indices": []
+		},
+		{
+			"offsets": [
+				190,
+				110
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "firstDeath",
+			"loop": false,
+			"name": "FirstPicoDie"
+		},
+		{
+			"offsets": [
+				122,
+				4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathConfirm",
+			"loop": false,
+			"name": "RestartPicoDie"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/pitogameover",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		255,
+		0
+	],
+	"camera_position": [
+		270,
+		-100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

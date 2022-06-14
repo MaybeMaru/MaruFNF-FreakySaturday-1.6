@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idlebf",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				1
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "leftbf",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-15,
+				15
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-12,
+				1
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "rightbf",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				7,
+				-1
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "ALTidle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				42
+			],
+			"anim": "weaponOut",
+			"fps": 24,
+			"name": "weaponOut",
+			"indices": []
+		},
+		{
+			"offsets": [
+				4,
+				-5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "ALTleft"
+		},
+		{
+			"offsets": [
+				24,
+				-7
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "ALTdown"
+		},
+		{
+			"offsets": [
+				0,
+				9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "ALTup"
+		},
+		{
+			"offsets": [
+				2,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "ALTright"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				338,
+				64
+			],
+			"anim": "bus",
+			"fps": 24,
+			"name": "bfBus",
+			"indices": []
+		},
+		{
+			"offsets": [
+				122,
+				13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "micattack",
+			"loop": false,
+			"name": "micattack"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/thebf",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		-80,
+		30
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bulletfall.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bulletfall0000" x="5" y="5" width="32" height="29" frameX="-201" frameY="-33" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0001" x="42" y="5" width="51" height="65" frameX="-171" frameY="0" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0002" x="98" y="5" width="31" height="32" frameX="-162" frameY="-4" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0003" x="98" y="5" width="31" height="32" frameX="-162" frameY="-4" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0004" x="134" y="5" width="27" height="33" frameX="-121" frameY="-1" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0005" x="134" y="5" width="27" height="33" frameX="-121" frameY="-1" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0006" x="166" y="5" width="25" height="34" frameX="-103" frameY="0" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0007" x="196" y="5" width="31" height="31" frameX="-63" frameY="-17" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0008" x="196" y="5" width="31" height="31" frameX="-63" frameY="-17" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0009" x="5" y="75" width="20" height="35" frameX="-51" frameY="-20" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0010" x="5" y="75" width="20" height="35" frameX="-51" frameY="-20" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0011" x="30" y="75" width="34" height="21" frameX="-28" frameY="-66" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0012" x="30" y="75" width="34" height="21" frameX="-28" frameY="-66" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0013" x="69" y="75" width="23" height="34" frameX="-11" frameY="-96" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0014" x="69" y="75" width="23" height="34" frameX="-11" frameY="-96" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0015" x="97" y="75" width="23" height="34" frameX="-9" frameY="-124" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0016" x="97" y="75" width="23" height="34" frameX="-9" frameY="-124" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0017" x="125" y="75" width="31" height="32" frameX="-3" frameY="-152" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0018" x="125" y="75" width="31" height="32" frameX="-3" frameY="-152" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0019" x="161" y="75" width="33" height="24" frameX="0" frameY="-184" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0020" x="161" y="75" width="33" height="24" frameX="0" frameY="-184" frameWidth="233" frameHeight="550"/>
+	<SubTexture name="bulletfall0021" x="199" y="75" width="3" height="3" frameX="-80" frameY="-547" frameWidth="233" frameHeight="550"/>
+</TextureAtlas>

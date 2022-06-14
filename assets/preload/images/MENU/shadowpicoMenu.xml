@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="shadowpicoMenu.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="shadowpicoIdle0000" x="5" y="5" width="468" height="457"/>
+	<SubTexture name="shadowpicoIdle0001" x="5" y="5" width="468" height="457"/>
+	<SubTexture name="shadowpicoIdle0002" x="478" y="5" width="463" height="455" frameX="-2" frameY="-2" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0003" x="478" y="5" width="463" height="455" frameX="-2" frameY="-2" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0004" x="946" y="5" width="457" height="454" frameX="-4" frameY="-3" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0005" x="946" y="5" width="457" height="454" frameX="-4" frameY="-3" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0006" x="1408" y="5" width="452" height="452" frameX="-5" frameY="-5" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0007" x="1408" y="5" width="452" height="452" frameX="-5" frameY="-5" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0008" x="1865" y="5" width="446" height="448" frameX="-7" frameY="-8" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0009" x="1865" y="5" width="446" height="448" frameX="-7" frameY="-8" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0010" x="2316" y="5" width="438" height="445" frameX="-10" frameY="-11" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0011" x="2316" y="5" width="438" height="445" frameX="-10" frameY="-11" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0012" x="2759" y="5" width="433" height="442" frameX="-12" frameY="-14" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0013" x="2759" y="5" width="433" height="442" frameX="-12" frameY="-14" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0014" x="3197" y="5" width="426" height="439" frameX="-14" frameY="-17" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0015" x="3197" y="5" width="426" height="439" frameX="-14" frameY="-17" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0016" x="3628" y="5" width="419" height="436" frameX="-17" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0017" x="3628" y="5" width="419" height="436" frameX="-17" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0018" x="4052" y="5" width="412" height="436" frameX="-19" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0019" x="4052" y="5" width="412" height="436" frameX="-19" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0020" x="5" y="467" width="405" height="434" frameX="-22" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0021" x="5" y="467" width="405" height="434" frameX="-22" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0022" x="415" y="467" width="403" height="435" frameX="-24" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0023" x="415" y="467" width="403" height="435" frameX="-24" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0024" x="823" y="467" width="402" height="435" frameX="-27" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0025" x="823" y="467" width="402" height="435" frameX="-27" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0026" x="1230" y="467" width="401" height="433" frameX="-30" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0027" x="1230" y="467" width="401" height="433" frameX="-30" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0028" x="1636" y="467" width="400" height="435" frameX="-33" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0029" x="2041" y="467" width="401" height="434" frameX="-31" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0030" x="2041" y="467" width="401" height="434" frameX="-31" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0031" x="2447" y="467" width="402" height="434" frameX="-28" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0032" x="2447" y="467" width="402" height="434" frameX="-28" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0033" x="2854" y="467" width="404" height="435" frameX="-25" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0034" x="2854" y="467" width="404" height="435" frameX="-25" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0035" x="3263" y="467" width="404" height="435" frameX="-23" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0036" x="3263" y="467" width="404" height="435" frameX="-23" frameY="-21" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0037" x="3672" y="467" width="409" height="436" frameX="-20" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0038" x="3672" y="467" width="409" height="436" frameX="-20" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0039" x="4086" y="467" width="415" height="436" frameX="-18" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0040" x="4086" y="467" width="415" height="436" frameX="-18" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0041" x="5" y="908" width="421" height="436" frameX="-16" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0042" x="5" y="908" width="421" height="436" frameX="-16" frameY="-20" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0043" x="431" y="908" width="427" height="439" frameX="-14" frameY="-17" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0044" x="431" y="908" width="427" height="439" frameX="-14" frameY="-17" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0045" x="863" y="908" width="434" height="441" frameX="-11" frameY="-14" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0046" x="863" y="908" width="434" height="441" frameX="-11" frameY="-14" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0047" x="1302" y="908" width="439" height="445" frameX="-10" frameY="-11" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0048" x="1302" y="908" width="439" height="445" frameX="-10" frameY="-11" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0049" x="1746" y="908" width="445" height="448" frameX="-8" frameY="-8" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0050" x="1746" y="908" width="445" height="448" frameX="-8" frameY="-8" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0051" x="2196" y="908" width="449" height="450" frameX="-6" frameY="-6" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0052" x="2196" y="908" width="449" height="450" frameX="-6" frameY="-6" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0053" x="2650" y="908" width="456" height="453" frameX="-4" frameY="-4" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0054" x="2650" y="908" width="456" height="453" frameX="-4" frameY="-4" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0055" x="3111" y="908" width="460" height="454" frameX="-3" frameY="-3" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0056" x="3111" y="908" width="460" height="454" frameX="-3" frameY="-3" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0057" x="3576" y="908" width="466" height="456" frameX="-1" frameY="-1" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0058" x="3576" y="908" width="466" height="456" frameX="-1" frameY="-1" frameWidth="468" frameHeight="457"/>
+	<SubTexture name="shadowpicoIdle0059" x="5" y="5" width="468" height="457"/>
+</TextureAtlas>

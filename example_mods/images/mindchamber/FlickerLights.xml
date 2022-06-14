@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FlickerLights.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Flicker0000" x="17" y="5" width="1280" height="720"/>
+	<SubTexture name="Flicker0001" x="5" y="5" width="7" height="6" frameX="-789" frameY="-1068" frameWidth="1280" frameHeight="1074"/>
+	<SubTexture name="Flicker0002" x="17" y="5" width="1280" height="720"/>
+	<SubTexture name="Glow0000" x="17" y="5" width="1280" height="720"/>
+</TextureAtlas>

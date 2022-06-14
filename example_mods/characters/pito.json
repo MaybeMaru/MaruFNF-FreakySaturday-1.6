@@ -1,0 +1,217 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				65,
+				9
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				69,
+				14
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				65,
+				15
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				59,
+				25
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				75,
+				-3
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				89,
+				11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "ALTidle"
+		},
+		{
+			"offsets": [
+				128,
+				14
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "weaponOut",
+			"indices": [
+				3,
+				3,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
+			],
+			"name": "weaponOut"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				84,
+				7
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "ALTleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				83,
+				7
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "ALTup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				4
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "ALTdown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				79,
+				-5
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "ALRright",
+			"indices": []
+		},
+		{
+			"offsets": [
+				127,
+				14
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "weaponIn",
+			"indices": [
+				10,
+				11,
+				9,
+				8,
+				7,
+				6,
+				5,
+				4,
+				3,
+				3,
+				3
+			],
+			"name": "weaponOut"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				84,
+				5
+			],
+			"anim": "shoot",
+			"fps": 24,
+			"name": "shoot",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				99,
+				150
+			],
+			"anim": "buscutscene",
+			"fps": 24,
+			"name": "picoBus",
+			"indices": []
+		},
+		{
+			"offsets": [
+				61,
+				9
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "reload",
+			"loop": false,
+			"name": "reload"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/pito",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		255,
+		0
+	],
+	"camera_position": [
+		40,
+		20
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

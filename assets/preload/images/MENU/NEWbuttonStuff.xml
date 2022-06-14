@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NEWbuttonStuff.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CREDITS0000" x="5" y="5" width="219" height="104"/>
+	<SubTexture name="CREDITS0001" x="5" y="5" width="219" height="104"/>
+	<SubTexture name="CREDITS0002" x="5" y="114" width="211" height="99" frameX="-4" frameY="-2" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0003" x="5" y="114" width="211" height="99" frameX="-4" frameY="-2" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0004" x="5" y="218" width="203" height="94" frameX="-8" frameY="-5" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0005" x="5" y="218" width="203" height="94" frameX="-8" frameY="-5" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0006" x="5" y="317" width="194" height="88" frameX="-12" frameY="-8" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0007" x="5" y="317" width="194" height="88" frameX="-12" frameY="-8" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0008" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0009" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0010" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0011" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0012" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0013" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS0014" x="5" y="410" width="187" height="83" frameX="-15" frameY="-10" frameWidth="219" frameHeight="104"/>
+	<SubTexture name="CREDITS-stop0000" x="197" y="410" width="162" height="58"/>
+	<SubTexture name="FREEPLAY0000" x="5" y="498" width="273" height="104"/>
+	<SubTexture name="FREEPLAY0001" x="5" y="498" width="273" height="104"/>
+	<SubTexture name="FREEPLAY0002" x="5" y="607" width="263" height="99" frameX="-5" frameY="-2" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0003" x="5" y="607" width="263" height="99" frameX="-5" frameY="-2" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0004" x="5" y="711" width="254" height="94" frameX="-10" frameY="-5" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0005" x="5" y="711" width="254" height="94" frameX="-10" frameY="-5" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0006" x="5" y="810" width="245" height="88" frameX="-15" frameY="-8" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0007" x="5" y="810" width="245" height="88" frameX="-15" frameY="-8" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0008" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0009" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0010" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0011" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0012" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0013" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY0014" x="5" y="903" width="236" height="83" frameX="-20" frameY="-10" frameWidth="273" frameHeight="104"/>
+	<SubTexture name="FREEPLAY-stop0000" x="5" y="991" width="211" height="58"/>
+	<SubTexture name="MENUPLAY0000" x="5" y="1054" width="350" height="104"/>
+	<SubTexture name="MENUPLAY0001" x="5" y="1054" width="350" height="104"/>
+	<SubTexture name="MENUPLAY0002" x="5" y="1163" width="338" height="98" frameX="-6" frameY="-3" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0003" x="5" y="1163" width="338" height="98" frameX="-6" frameY="-3" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0004" x="5" y="1266" width="326" height="93" frameX="-11" frameY="-5" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0005" x="5" y="1266" width="326" height="93" frameX="-11" frameY="-5" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0006" x="5" y="1364" width="312" height="86" frameX="-18" frameY="-9" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0007" x="5" y="1364" width="312" height="86" frameX="-18" frameY="-9" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0008" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0009" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0010" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0011" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0012" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0013" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY0014" x="5" y="1455" width="307" height="83" frameX="-20" frameY="-10" frameWidth="350" frameHeight="104"/>
+	<SubTexture name="MENUPLAY-stop0000" x="5" y="1543" width="282" height="58"/>
+	<SubTexture name="OPTIONS0000" x="5" y="1606" width="236" height="104"/>
+	<SubTexture name="OPTIONS0001" x="5" y="1606" width="236" height="104"/>
+	<SubTexture name="OPTIONS0002" x="5" y="1715" width="228" height="99" frameX="-4" frameY="-2" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0003" x="5" y="1715" width="228" height="99" frameX="-4" frameY="-2" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0004" x="5" y="1819" width="219" height="94" frameX="-8" frameY="-5" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0005" x="5" y="1819" width="219" height="94" frameX="-8" frameY="-5" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0006" x="5" y="1918" width="211" height="88" frameX="-12" frameY="-8" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0007" x="5" y="1918" width="211" height="88" frameX="-12" frameY="-8" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0008" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0009" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0010" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0011" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0012" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0013" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS0014" x="5" y="2011" width="203" height="83" frameX="-16" frameY="-10" frameWidth="236" frameHeight="104"/>
+	<SubTexture name="OPTIONS-stop0000" x="5" y="2099" width="178" height="58"/>
+</TextureAtlas>

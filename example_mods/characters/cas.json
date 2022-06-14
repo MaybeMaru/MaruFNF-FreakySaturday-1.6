@@ -1,0 +1,144 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-17,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				1
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				14
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				1
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				49,
+				156
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "ALTidle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				223,
+				164
+			],
+			"anim": "peniscutscene",
+			"fps": 24,
+			"name": "cutscene",
+			"indices": []
+		},
+		{
+			"offsets": [
+				104,
+				226
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"loop": false,
+			"name": "ALTLEFT"
+		},
+		{
+			"offsets": [
+				71,
+				120
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"loop": false,
+			"name": "ALTDOWN"
+		},
+		{
+			"offsets": [
+				82,
+				212
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP-alt",
+			"loop": false,
+			"name": "ALTUP"
+		},
+		{
+			"offsets": [
+				24,
+				186
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"loop": false,
+			"name": "ALTRIGHT"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/cas",
+	"position": [
+		20,
+		370
+	],
+	"healthicon": "mom",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		-330,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 1.2
+}

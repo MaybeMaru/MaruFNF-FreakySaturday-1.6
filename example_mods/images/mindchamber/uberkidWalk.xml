@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="uberkidWalk.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="walk0000" x="5" y="5" width="168" height="188" frameX="-11" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0001" x="5" y="5" width="168" height="188" frameX="-11" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0002" x="178" y="5" width="169" height="192" frameX="-10" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0003" x="178" y="5" width="169" height="192" frameX="-10" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0004" x="352" y="5" width="154" height="189" frameX="0" frameY="-13" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0005" x="352" y="5" width="154" height="189" frameX="0" frameY="-13" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0006" x="511" y="5" width="172" height="197" frameX="-9" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0007" x="511" y="5" width="172" height="197" frameX="-9" frameY="0" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0008" x="688" y="5" width="171" height="197" frameX="-10" frameY="-3" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0009" x="688" y="5" width="171" height="197" frameX="-10" frameY="-3" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0010" x="352" y="5" width="154" height="189" frameX="0" frameY="-13" frameWidth="181" frameHeight="202"/>
+	<SubTexture name="walk0011" x="352" y="5" width="154" height="189" frameX="0" frameY="-13" frameWidth="181" frameHeight="202"/>
+</TextureAtlas>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="uberkidbf.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="diebf0000" x="5" y="5" width="163" height="189" frameX="-86" frameY="-11" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0001" x="173" y="5" width="155" height="193" frameX="-87" frameY="-8" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0002" x="333" y="5" width="157" height="199" frameX="-79" frameY="0" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0003" x="495" y="5" width="157" height="199" frameX="-79" frameY="0" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0004" x="657" y="5" width="204" height="195" frameX="-30" frameY="-9" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0005" x="657" y="5" width="204" height="195" frameX="-30" frameY="-9" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0006" x="866" y="5" width="258" height="173" frameX="0" frameY="-35" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0007" x="1129" y="5" width="258" height="78" frameX="0" frameY="-130" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0008" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0009" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0010" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0011" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0012" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0013" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0014" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0015" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0016" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0017" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0018" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0019" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0020" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0021" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0022" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0023" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0024" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0025" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0026" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0027" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0028" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0029" x="247" y="209" width="19" height="19" frameX="-106" frameY="-620" frameWidth="258" frameHeight="639"/>
+        <SubTexture name="diebf0030" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+	<SubTexture name="diebf0031" x="5" y="209" width="237" height="93" frameX="-10" frameY="-119" frameWidth="258" frameHeight="639"/>
+
+
+	<SubTexture name="walkbf0000" x="271" y="209" width="168" height="188" frameX="-1" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0001" x="271" y="209" width="168" height="188" frameX="-1" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0002" x="444" y="209" width="168" height="191" frameX="-2" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0003" x="444" y="209" width="168" height="191" frameX="-2" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0004" x="617" y="209" width="154" height="190" frameX="-26" frameY="-12" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0005" x="617" y="209" width="154" height="190" frameX="-26" frameY="-12" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0006" x="776" y="209" width="172" height="196" frameX="0" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0007" x="776" y="209" width="172" height="196" frameX="0" frameY="0" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0008" x="953" y="209" width="171" height="198" frameX="0" frameY="-2" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0009" x="953" y="209" width="171" height="198" frameX="0" frameY="-2" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0010" x="617" y="209" width="154" height="190" frameX="-26" frameY="-12" frameWidth="180" frameHeight="202"/>
+	<SubTexture name="walkbf0011" x="617" y="209" width="154" height="190" frameX="-26" frameY="-12" frameWidth="180" frameHeight="202"/>
+</TextureAtlas>

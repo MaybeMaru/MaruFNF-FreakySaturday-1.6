@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="picoMenu.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="picoIdle0000" x="5" y="5" width="422" height="411"/>
+	<SubTexture name="picoIdle0001" x="5" y="5" width="422" height="411"/>
+	<SubTexture name="picoIdle0002" x="432" y="5" width="417" height="410" frameX="-2" frameY="-1" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0003" x="432" y="5" width="417" height="410" frameX="-2" frameY="-1" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0004" x="854" y="5" width="411" height="408" frameX="-4" frameY="-3" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0005" x="854" y="5" width="411" height="408" frameX="-4" frameY="-3" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0006" x="1270" y="5" width="405" height="405" frameX="-6" frameY="-5" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0007" x="1270" y="5" width="405" height="405" frameX="-6" frameY="-5" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0008" x="1680" y="5" width="400" height="402" frameX="-7" frameY="-8" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0009" x="1680" y="5" width="400" height="402" frameX="-7" frameY="-8" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0010" x="2085" y="5" width="393" height="399" frameX="-10" frameY="-11" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0011" x="2085" y="5" width="393" height="399" frameX="-10" frameY="-11" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0012" x="2483" y="5" width="386" height="396" frameX="-12" frameY="-14" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0013" x="2483" y="5" width="386" height="396" frameX="-12" frameY="-14" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0014" x="2874" y="5" width="381" height="393" frameX="-13" frameY="-17" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0015" x="2874" y="5" width="381" height="393" frameX="-13" frameY="-17" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0016" x="3260" y="5" width="374" height="390" frameX="-16" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0017" x="3260" y="5" width="374" height="390" frameX="-16" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0018" x="3639" y="5" width="367" height="390" frameX="-18" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0019" x="3639" y="5" width="367" height="390" frameX="-18" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0020" x="5" y="421" width="360" height="389" frameX="-21" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0021" x="5" y="421" width="360" height="389" frameX="-21" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0022" x="370" y="421" width="359" height="389" frameX="-23" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0023" x="370" y="421" width="359" height="389" frameX="-23" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0024" x="734" y="421" width="358" height="388" frameX="-26" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0025" x="734" y="421" width="358" height="388" frameX="-26" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0026" x="1097" y="421" width="357" height="388" frameX="-29" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0027" x="1097" y="421" width="357" height="388" frameX="-29" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0028" x="1459" y="421" width="355" height="389" frameX="-32" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0029" x="1819" y="421" width="354" height="389" frameX="-34" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0030" x="1819" y="421" width="354" height="389" frameX="-34" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0031" x="2178" y="421" width="356" height="389" frameX="-31" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0032" x="2178" y="421" width="356" height="389" frameX="-31" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0033" x="2539" y="421" width="357" height="388" frameX="-28" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0034" x="2539" y="421" width="357" height="388" frameX="-28" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0035" x="2901" y="421" width="358" height="389" frameX="-25" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0036" x="2901" y="421" width="358" height="389" frameX="-25" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0037" x="3264" y="421" width="359" height="389" frameX="-22" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0038" x="3264" y="421" width="359" height="389" frameX="-22" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0039" x="3628" y="421" width="362" height="389" frameX="-20" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0040" x="3628" y="421" width="362" height="389" frameX="-20" frameY="-21" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0041" x="5" y="815" width="369" height="390" frameX="-17" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0042" x="5" y="815" width="369" height="390" frameX="-17" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0043" x="379" y="815" width="376" height="390" frameX="-15" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0044" x="379" y="815" width="376" height="390" frameX="-15" frameY="-20" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0045" x="760" y="815" width="382" height="394" frameX="-13" frameY="-16" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0046" x="760" y="815" width="382" height="394" frameX="-13" frameY="-16" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0047" x="1147" y="815" width="388" height="397" frameX="-11" frameY="-13" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0048" x="1147" y="815" width="388" height="397" frameX="-11" frameY="-13" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0049" x="1540" y="815" width="394" height="400" frameX="-9" frameY="-10" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0050" x="1540" y="815" width="394" height="400" frameX="-9" frameY="-10" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0051" x="1939" y="815" width="400" height="402" frameX="-7" frameY="-8" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0052" x="1939" y="815" width="400" height="402" frameX="-7" frameY="-8" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0053" x="2344" y="815" width="406" height="406" frameX="-5" frameY="-5" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0054" x="2344" y="815" width="406" height="406" frameX="-5" frameY="-5" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0055" x="2755" y="815" width="411" height="408" frameX="-4" frameY="-3" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0056" x="2755" y="815" width="411" height="408" frameX="-4" frameY="-3" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0057" x="3171" y="815" width="417" height="410" frameX="-2" frameY="-1" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0058" x="3171" y="815" width="417" height="410" frameX="-2" frameY="-1" frameWidth="422" frameHeight="411"/>
+	<SubTexture name="picoIdle0059" x="5" y="5" width="422" height="411"/>
+</TextureAtlas>

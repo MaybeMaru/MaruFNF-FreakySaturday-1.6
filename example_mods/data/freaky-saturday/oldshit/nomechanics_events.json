@@ -1,0 +1,79 @@
+{
+	"song": {
+		"speed": 2.6,
+		"stage": "picostreet",
+		"player1": "pito",
+		"player2": "thebf",
+		"player3": null,
+		"events": [
+			[
+				16000,
+				[
+					[
+						"Play Animation",
+						"weaponOut",
+						"Dad"
+					]
+				]
+			],
+			[
+				16181.8181818182,
+				[
+					[
+						"Alt Idle Animation",
+						"Dad",
+						"-alt"
+					]
+				]
+			],
+			[
+				21818.1818181818,
+				[
+					[
+						"Play Animation",
+						"weaponOut",
+						"BF"
+					]
+				]
+			],
+			[
+				22000,
+				[
+					[
+						"Alt Idle Animation",
+						"BF",
+						"-alt"
+					]
+				]
+			],
+			[
+				64000,
+				[
+					[
+						"bus",
+						"",
+						""
+					]
+				]
+			],
+			[
+				69727.2727272728,
+				[
+					[
+						"endbus",
+						"",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": "noteSplashes",
+		"validScore": false,
+		"gfVersion": "gf-pixel",
+		"bpm": 165,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "Freaky-Saturday"
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"storyName": "pico day",
+	"difficulties": "Normal,Nomechs",
+	"hideFreeplay": false,
+	"weekBackground": "philly",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"freaky-saturday",
+			"pico",
+			[
+				0,
+				215,
+				0
+			]
+		],
+		[
+			"penilian",
+			"mom",
+			[
+				206,
+				0,
+				93
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "freaky friday",
+	"hiddenUntilUnlocked": false
+}
