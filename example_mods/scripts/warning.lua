@@ -4,9 +4,6 @@ local menuEnabled = true; -- controls if the menu should show up at all
 
 local menuStarted = false;
 
-offsetshitX = 0
-offsetshitY = 0
-
 --OPTIONS SHIT
 function onStartCountdown()
     if menuEnabled == true and menuStarted == false and songName == 'penilian' then
@@ -78,8 +75,6 @@ function onCreatePost()
         setObjectCamera('valueText', 'other');
 		setObjectCamera('checkbox', 'other');
 
-        
-
 		if getDataFromSave('flashinglights', 'hasflashinglights') == true then
 			setProperty('checkbox.offset.x', 38);
 			setProperty('checkbox.offset.y', 25);
@@ -91,40 +86,6 @@ function onCreatePost()
 			luaSpritePlayAnimation('checkbox', 'unchecked2');
 		end
     end
-
-	if songName == 'penilian' then
-		offsetshitX = 0
-		offsetshitY = 0
-	else
-		offsetshitX = 80
-		offsetshitY = 0
-	end
-
-	makeLuaSprite('bs1', '', -250, -100)
-	makeGraphic('bs1', 225, 1000, '000000')
-	setObjectCamera('bs1', 'game')
-	addLuaSprite('bs1', true)
-
-	setProperty('bs1.offset.x', offsetshitX);
-	setProperty('bs1.offset.y', offsetshitY);
-	
-
-	makeLuaSprite('bs2', '', 850, -100)
-	makeGraphic('bs2', 225, 1000, '000000')
-	setObjectCamera('bs2', 'game')
-	addLuaSprite('bs2', true)
-
-	setProperty('bs2.offset.x', offsetshitX);
-	setProperty('bs2.offset.y', offsetshitY);
-
-	makeLuaSprite('bars','barsnew',0,0)
-	setLuaSpriteScrollFactor('bars',160,90)
-	addLuaSprite('bars',true)
-	setProperty('bars.antialiasing',false)
-	scaleObject('bars',4,4)
-	setObjectCamera('bars', 'other');
-	setProperty('bars.offset.x', -320);
-
 
 end
 

@@ -1,29 +1,34 @@
-local reverseTime = false
 didskip = false
-timeforstart = 16
+timeforstart = 0
 millisecondsstart = 0
 roundedmiliseconds = 0
 
-function onCreatePost()
-	if downscroll == true then
-		makeLuaText('skip', 'Press Space to Skip Intro', 1270, 0, 25);
-	end
-	if downscroll == false then
-		makeLuaText('skip', 'Press Space to Skip Intro', 1270, 0, 675);
-	end
+--In BEATS --> curBeat 
+beatsinfoshit = {
+	{'Freaky-Saturday', 16},
+    {'penilian', 32},
+}
 
+function onCreatePost()
+
+	for i = 1,  #beatsinfoshit do
+		if songName == beatsinfoshit[i][1] then
+            timeforstart = beatsinfoshit[i][2]
+
+			if downscroll == true then
+				makeLuaText('skip', 'Press Space to Skip Intro', 1270, 0, 25);
+			else
+				makeLuaText('skip', 'Press Space to Skip Intro', 1270, 0, 675);
+			end
+		end
+	end
+	
 	addLuaText('skip');
 	setTextSize('skip', 30)
 	--setProperty('skip.alpha', 0.8)
 	setTextFont('skip', 'potatpress__.ttf')
 	
-	--In BEATS --> curBeat 
-	if songName == 'penilian' then
-		timeforstart = 32
-	end
-
 	millisecondsstart = (60000 / bpm) * timeforstart
-
 	roundedmiliseconds = round(millisecondsstart, 4)
 	
 end
@@ -33,8 +38,7 @@ function onUpdatePost()
 
 		if downscroll == true then
 			doTweenY('skipfuera','skip',getProperty('skip.y') - 50 ,0.1,'linear')
-		end
-		if downscroll == false then
+		else
 			doTweenY('skipfuera','skip',getProperty('skip.y') + 50 ,0.1,'linear')
 		end
 	
@@ -49,7 +53,6 @@ function onUpdatePost()
     end
 
 	if curStep > 79 then
-	reverseTime = true
 	didskip = true
 end
 end

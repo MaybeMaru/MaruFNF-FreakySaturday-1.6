@@ -4,12 +4,7 @@ local deathAnimPlaying = false
 local didEmergencyCreate = false
 local InCutsceneBus = false
 
-local CountDownOfDeath = 5
-
-local DebugMode = false
-
-local initialCamera
-local initialMiddleScroll
+local CountDownOfDeath = 6
 
 function onCreate()
 
@@ -19,29 +14,9 @@ function onCreate()
 	setPropertyFromClass('GameOverSubstate', 'loopSoundName', 'gameOver'); --put in mods/music/
 	setPropertyFromClass('GameOverSubstate', 'endSoundName', 'gameOverEnd'); --put in mods/music/
 
-	setProperty("defaultCamZoom",1.2)--DEFAULT 1.2
-
-	setProperty('healthBarBG.visible', true);
-	setProperty('healthBar.visible', true);
+	
 	
 --God bless you Shade from the Psych Engine Discord im too dumb to know how to do this
-
-if middlescroll == true then
-	initialMiddleScroll = true
-end
-if middlescroll == false then
-	initialMiddleScroll = false
-end	
-
-if cameraZoomOnBeat == true then
-	initialCamera = true
-end
-if cameraZoomOnBeat == false then
-	initialCamera = false
-end
-
-setPropertyFromClass('ClientPrefs', 'camZooms', false)
-setPropertyFromClass('ClientPrefs', 'middleScroll', true)
 
 --ACTUAL SCRIPT
 
@@ -169,7 +144,10 @@ setPropertyFromClass('ClientPrefs', 'middleScroll', true)
 	
 	addLuaSprite('frontbgUberkids', true);
 	addLuaSprite('otherfrontbgUberkids', true);
-	
+
+	makeLuaText('debugText', 'ERROR DUMBASS', 0, 175, 150)
+	addLuaText('debugText')
+	setProperty('debugText.alpha', 0)
 end
 
 
@@ -265,10 +243,6 @@ function onEvent(name, value1, value2)
 	end
 end
 
-function eventEarlyTrigger(name, value1, value2)
-
-end
-
 function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'BulletNote' then
 
@@ -284,10 +258,10 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 		
 			cancelTimer('countForDEATH')
 
-			CountDownOfDeath = 5
+			CountDownOfDeath = 6
 			uberkidDead = true
 
-			playSound('gunshot', 1)
+			playSound('gunshot', 0.7)
 	
 			--cameraFlash('camGame', 'ffffff', 0.15, true);
 			cameraShake('camGame', 0.015, 0.15);
@@ -342,7 +316,6 @@ function onTimerCompleted(tag, loops, loopsLeft)
 
 	if tag == 'countForDEATH' then
 
-
 		setProperty('numbers.scale.y', 3);
 		setProperty('numbers.scale.x', 3);
 
@@ -384,7 +357,7 @@ function onTweenCompleted(tag)
 		uberkidIsInFront = true
 
 		--START TIMER
-		runTimer('countForDEATH', 1.069, 5)
+		runTimer('countForDEATH', 1.069, 6)
 
 		cancelTween('hegointoPico')
 		setProperty('walkingUberkid.x', 750)
@@ -429,97 +402,30 @@ function onBeatHit()
 end
 
 function onUpdate()
+
 	if getProperty('uberkidbf.animation.curAnim.name') == 'die' and getProperty('uberkidbf.animation.curAnim.finished') == true then
 	    setProperty('uberkidbf.x', -350)
 	end
-	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F10') then
-		
-			DebugMode = false
-			removeLuaSprite('testBlackSquare', false)
-			removeLuaText('DebugMode', false)
-			removeLuaText('STARTuberkidDead', false)
-			removeLuaText('STARTuberkidIsInFront', false)
-			removeLuaText('STARTDeadAnimPlaying', false)
-			removeLuaText('STARTdidEmergencyCreate', false)
-			removeLuaText('STARTCountDownOfDeath', false)
-			removeLuaText('uberkidDead', false)
-			removeLuaText('uberkidIsInFront', false)
-			removeLuaText('DeadAnimPlaying', false)
-			removeLuaText('didEmergencyCreate', false)
-			removeLuaText('CountDownOfDeath', false)
 
-			removeLuaText('STARTinitialCamera', false)
-			removeLuaText('STARTinitialMiddleScroll', false)
-			removeLuaText('initialCamera', false)
-			removeLuaText('initialMiddleScroll', false)
+	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F10') then
+
+		setProperty('debugText.alpha', 0)
+			--setProperty('uberkidDeadText.alpha', 0)
+			--setProperty('uberkidIsInFront.alpha', 0)
+			--setProperty('DeadAnimPlaying.alpha', 0)
+			--setProperty('didEmergencyCreate.alpha', 0)
+			--setProperty('CountDownOfDeath.alpha', 0)
 	end	
 	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F9') then
 
-			if DebugMode == false then
-				DebugMode = true
-				--playSound('debug', 1)
-			end
-
-	    if DebugMode == true  then
-
-			makeLuaText('DebugMode', 'DEBUG MODE', 0, 400 - 220, 110)
-			setTextSize('DebugMode', 30)
-			setTextColor('DebugMode', '008cff')
 		
-			makeLuaText('STARTuberkidDead', 'IsDead:', 0, 400 - 200, 150)
-			makeLuaText('STARTuberkidIsInFront', 'InFront:', 0, 400 - 200, 170)
-			makeLuaText('STARTDeadAnimPlaying', 'DeathAnimation:', 0, 375 - 200, 190)
-			makeLuaText('STARTdidEmergencyCreate', 'EmergencyCreate:', 0, 367 - 200, 210)	
-			makeLuaText('STARTCountDownOfDeath', 'CountDown:', 0, 400 - 210, 230)	
-			
-			--Settings
-			makeLuaText('STARTinitialCamera', 'initCamera:', 0, 375 - 190, 250 + 40)
-			makeLuaText('STARTinitialMiddleScroll', 'initMiddlescroll:', 0, 367 - 210, 270+ 40)	
-		
-			makeLuaText('uberkidDead', '', 0, 515 - 200, 150)
-			makeLuaText('uberkidIsInFront', '', 0, 515 - 200, 170)
-			makeLuaText('DeadAnimPlaying', '', 0, 515 - 200, 190)
-			makeLuaText('didEmergencyCreate', '', 0, 515 - 200, 210)
-			makeLuaText('CountDownOfDeath', '', 0, 515 - 200, 230)
-			
-			--Settings
-			makeLuaText('initialCamera', '', 0, 515 - 200, 250 + 40)
-			makeLuaText('initialMiddleScroll', '', 0, 515 - 200, 270 + 40)
-	
-
-			--Sexy Big Black Square
-			makeLuaSprite('testBlackSquare', '', 150, 105)
-			makeGraphic('testBlackSquare', 225, 21.36 * 11, '000000')
-			setObjectCamera('testBlackSquare', 'hud')
-			setProperty('testBlackSquare.alpha', .8)
-			addLuaSprite('testBlackSquare')
-
-			addLuaText('DebugMode');
-	
-			addLuaText('STARTuberkidDead');
-			addLuaText('STARTuberkidIsInFront');
-			addLuaText('STARTDeadAnimPlaying');
-			addLuaText('STARTdidEmergencyCreate');
-			addLuaText('STARTCountDownOfDeath');
-
-			--Settings
-			addLuaText('STARTinitialCamera');
-			addLuaText('STARTinitialMiddleScroll');
-	
-			addLuaText('uberkidDead');
-			addLuaText('uberkidIsInFront');
-			addLuaText('DeadAnimPlaying');
-			addLuaText('didEmergencyCreate');
-			addLuaText('CountDownOfDeath');
-
-			--Settings
-			addLuaText('initialCamera');
-			addLuaText('initialMiddleScroll');
-
-
-		end
+		setProperty('debugText.alpha', 1)
+			--setProperty('uberkidDeadText.alpha', 1)
+			--setProperty('uberkidIsInFront.alpha', 1)
+			--setProperty('DeadAnimPlaying.alpha', 1)
+			--setProperty('didEmergencyCreate.alpha', 1)
+			--setProperty('CountDownOfDeath.alpha', 1)
 	end
-
 
 	if CountDownOfDeath == 0 then
 		if uberkidDead == false then
@@ -527,65 +433,41 @@ function onUpdate()
 		end
 	end
 
-
-	if DebugMode == true then
-		setTextString('uberkidDead', uberkidDead)
-		setTextString('uberkidIsInFront', uberkidIsInFront)
-		setTextString('DeadAnimPlaying', deathAnimPlaying)
-		setTextString('didEmergencyCreate', didEmergencyCreate)
-		setTextString('CountDownOfDeath', CountDownOfDeath)
-
-		setTextString('initialCamera', initialCamera)
-		setTextString('initialMiddleScroll', initialMiddleScroll)
 	
-		if uberkidDead == false then
-			setTextColor('uberkidDead', 'ff0000')
-		else
-			setTextColor('uberkidDead', '00ff04')
-		end
-		if uberkidIsInFront == false then
-			setTextColor('uberkidIsInFront', 'ff0000')
-		else
-			setTextColor('uberkidIsInFront', '00ff04')
-		end
-		if deathAnimPlaying == false then
-			setTextColor('DeadAnimPlaying', 'ff0000')
-		else
-			setTextColor('DeadAnimPlaying', '00ff04')
-		end
-		if didEmergencyCreate == false then
-			setTextColor('didEmergencyCreate', 'ff0000')
-		else
-			setTextColor('didEmergencyCreate', '00ff04')
-		end
-		if CountDownOfDeath > 3 then
-			setTextColor('CountDownOfDeath', '00ff04')
-		else
-			setTextColor('CountDownOfDeath', 'ff0000')
-		end
 	
-	end
+		--setTextString('uberkidDeadText', 'IsDead:'..what)
+		--setTextString('uberkidIsInFront', 'InFront:'..uberkidIsInFront)
+		--setTextString('DeadAnimPlaying', 'DeathAnimation:'..deathAnimPlaying)
+		--setTextString('didEmergencyCreate', 'EmergencyCreate:'..didEmergencyCreate)
+		--setTextString('CountDownOfDeath', 'CountDown:'..CountDownOfDeath)
+	
+		--if uberkidDead == false then
+			--setTextColor('uberkidDeadText', 'ff0000')
+		--else
+			--setTextColor('uberkidDeadText', '00ff04')
+		--end
+		--if uberkidIsInFront == false then
+		--	setTextColor('uberkidIsInFront', 'ff0000')
+		--else
+		--	setTextColor('uberkidIsInFront', '00ff04')
+		--end
+		--if deathAnimPlaying == false then
+		--	setTextColor('DeadAnimPlaying', 'ff0000')
+		--else
+		--	setTextColor('DeadAnimPlaying', '00ff04')
+		--end
+		--if didEmergencyCreate == false then
+		--	setTextColor('didEmergencyCreate', 'ff0000')
+		--else
+		--	setTextColor('didEmergencyCreate', '00ff04')
+		--end
+		--if CountDownOfDeath > 3 then
+		--	setTextColor('CountDownOfDeath', '00ff04')
+		--else
+		--	setTextColor('CountDownOfDeath', 'ff0000')
+		--end
 
-
---SETUP UI SHIT
-	setProperty('iconP1.alpha', 0);
-	setProperty('iconP2.alpha', 0);
-	for i = 0, getProperty('opponentStrums.length')-1 do
-		setPropertyFromGroup('opponentStrums',i,'visible',false)
-		setPropertyFromGroup('opponentStrums',i,'y',130)
-		setPropertyFromGroup('opponentStrums',i,'x',-9999)
-    end
-	setProperty('gf.visible',false);
-	setProperty('scoreTxt.visible', false)
-	if getPropertyFromClass('ClientPrefs', 'downScroll') == false then
-	setProperty('botplayTxt.y', 536)
-	elseif getPropertyFromClass('ClientPrefs', 'downScroll') == true then
-	setProperty('botplayTxt.y', 126)
-	end
-	setProperty('timeBar.visible', false);
-	setProperty('timeBarBG.visible', false);
-	setProperty('timeTxt.visible', false);
-end
+end	
 
 function onCountdownTick(counter)
 
@@ -622,8 +504,33 @@ function onCountdownTick(counter)
 	end
 end
 
---Give Back Settings
-function onDestroy()
-	setPropertyFromClass('ClientPrefs', 'camZooms', initialCamera)
-	setPropertyFromClass('ClientPrefs', 'middleScroll', initialMiddleScroll)
+function onUpdatePost()
+	--This code FUCKING SUCKS but for some reason I cant put bools in the text string so fuck you
+uberkidDead4text = 'ERROR, YOU SUCK'
+uberkidIsInFront4text = 'ERROR, YOU SUCK'
+deathAnimPlaying4text = 'ERROR, YOU SUCK'
+didEmergencyCreate4text = 'ERROR, YOU SUCK'
+
+if uberkidDead == true then
+	uberkidDead4text = 'Dead Kid: true'
+else
+	uberkidDead4text = 'Dead Kid: false'
+end
+if uberkidIsInFront == true then
+	uberkidIsInFront4text = 'In Front: true'
+else
+	uberkidIsInFront4text = 'In Front: false'
+end
+if deathAnimPlaying == true then
+	deathAnimPlaying4text = 'Death Anim: true'
+else
+	deathAnimPlaying4text = 'Death Anim: false'
+end
+if didEmergencyCreate == true then
+	didEmergencyCreate4text = 'Emergency: true'
+else
+	didEmergencyCreate4text = 'Emergency: false'
+end
+
+	setTextString('debugText', uberkidDead4text..'\n'..uberkidIsInFront4text..'\n'..deathAnimPlaying4text..'\n'..didEmergencyCreate4text..'\n'..'Countdown: '..CountDownOfDeath..'\n')
 end
