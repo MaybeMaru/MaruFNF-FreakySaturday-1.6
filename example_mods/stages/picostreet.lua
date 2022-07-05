@@ -410,21 +410,11 @@ function onUpdate()
 	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F10') then
 
 		setProperty('debugText.alpha', 0)
-			--setProperty('uberkidDeadText.alpha', 0)
-			--setProperty('uberkidIsInFront.alpha', 0)
-			--setProperty('DeadAnimPlaying.alpha', 0)
-			--setProperty('didEmergencyCreate.alpha', 0)
-			--setProperty('CountDownOfDeath.alpha', 0)
 	end	
 	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F9') then
 
 		
 		setProperty('debugText.alpha', 1)
-			--setProperty('uberkidDeadText.alpha', 1)
-			--setProperty('uberkidIsInFront.alpha', 1)
-			--setProperty('DeadAnimPlaying.alpha', 1)
-			--setProperty('didEmergencyCreate.alpha', 1)
-			--setProperty('CountDownOfDeath.alpha', 1)
 	end
 
 	if CountDownOfDeath == 0 then
@@ -432,40 +422,6 @@ function onUpdate()
 			setProperty('health', -500)
 		end
 	end
-
-	
-	
-		--setTextString('uberkidDeadText', 'IsDead:'..what)
-		--setTextString('uberkidIsInFront', 'InFront:'..uberkidIsInFront)
-		--setTextString('DeadAnimPlaying', 'DeathAnimation:'..deathAnimPlaying)
-		--setTextString('didEmergencyCreate', 'EmergencyCreate:'..didEmergencyCreate)
-		--setTextString('CountDownOfDeath', 'CountDown:'..CountDownOfDeath)
-	
-		--if uberkidDead == false then
-			--setTextColor('uberkidDeadText', 'ff0000')
-		--else
-			--setTextColor('uberkidDeadText', '00ff04')
-		--end
-		--if uberkidIsInFront == false then
-		--	setTextColor('uberkidIsInFront', 'ff0000')
-		--else
-		--	setTextColor('uberkidIsInFront', '00ff04')
-		--end
-		--if deathAnimPlaying == false then
-		--	setTextColor('DeadAnimPlaying', 'ff0000')
-		--else
-		--	setTextColor('DeadAnimPlaying', '00ff04')
-		--end
-		--if didEmergencyCreate == false then
-		--	setTextColor('didEmergencyCreate', 'ff0000')
-		--else
-		--	setTextColor('didEmergencyCreate', '00ff04')
-		--end
-		--if CountDownOfDeath > 3 then
-		--	setTextColor('CountDownOfDeath', '00ff04')
-		--else
-		--	setTextColor('CountDownOfDeath', 'ff0000')
-		--end
 
 end	
 
