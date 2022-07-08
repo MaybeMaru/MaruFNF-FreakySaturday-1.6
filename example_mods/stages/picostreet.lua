@@ -1,292 +1,217 @@
-local uberkidDead = false
-local uberkidIsInFront = false
-local deathAnimPlaying = false
-local didEmergencyCreate = false
-local InCutsceneBus = false
+didthebusShit = false
+canShoot = false
 
-local CountDownOfDeath = 6
+shitToTweenCOLOR = {
+    {'boyfriend'},
+    {'dad'},
+    {'floor'},
+    {'buildings'},
+    {'bgUberkids'},
+    {'walkingUberkid'},
+    {'UberkidCorpse'},
+    {'buscoming'},
+    {'bulletfall'},
+    {'uberkidbf'},
+    {'frontbgUberkids'},
+    {'frontbgUberkidsSide'},
+    {'uberkidbfCorpse'},
+    {'boopingUberkid'},
+    {'DeaduberkidbfCorpse'},
+}
+
+guysWithIdles = {
+    {'bgUberkids', 'idle', true},
+    {'frontbgUberkids', 'idle', true},
+    {'frontbgUberkidsSide', 'idle', true},
+    {'boopingUberkid', 'idle', false}
+}
+
+soundsPrecache = {
+    {'gunshot'},
+    {'throwmic'},
+    {'gunout'},
+    {'micout'},
+    {'reload'},
+    {'blood'},
+    {'bulletfall'},
+    {'countdown'},
+    {'debug'},
+}
+
+imagePrecache = {
+    {'characters/pitogameover'},
+}
 
 function onCreate()
 
---SETUP GAMEOVER
-	setPropertyFromClass('GameOverSubstate', 'characterName', 'pitogameover'); --Character json file for the death animation
-	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'picodies'); --put in mods/sounds/
-	setPropertyFromClass('GameOverSubstate', 'loopSoundName', 'gameOver'); --put in mods/music/
-	setPropertyFromClass('GameOverSubstate', 'endSoundName', 'gameOverEnd'); --put in mods/music/
+    --SETUP GAMEOVER
+        setPropertyFromClass('GameOverSubstate', 'characterName', 'pitogameover'); --Character json file for the death animation
+        setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'picodies'); --put in mods/sounds/
+        setPropertyFromClass('GameOverSubstate', 'loopSoundName', 'gameOver'); --put in mods/music/
+        setPropertyFromClass('GameOverSubstate', 'endSoundName', 'gameOverEnd'); --put in mods/music/
+    
 
-	
-	
---God bless you Shade from the Psych Engine Discord im too dumb to know how to do this
+    --HOW TO MAKE SHIT WITH FUNCTIONS
 
---ACTUAL SCRIPT
+        --makeBgIMAGES(name, foldername, x, y, scroll, scale, front, alpha, flip)
+        --makebgANIMATED(name, foldername, x, y, scroll, scale, front, alpha, flip)
+        --addbgANIMATION(name, animationName, animationNameXML, framerate, loop, defaultAnimation)
 
---IMAGES PRECACHE
-    precacheImage('characters/pitogameover')
+    --STAGE SHIT
 
---SOUNDS PRECACHE
-	precacheSound('gunshot')
-	precacheSound('throwmic')
-	precacheSound('gunout')
-	precacheSound('micout')
-	precacheSound('reload')
-	precacheSound('blood')
-	precacheSound('bulletfall')
-	precacheSound('countdown')
-	precacheSound('debug')
+        makeBgIMAGES('sky', 'sky', -310, -100, 0.8, 1, false, 1, false)
 
---STAGE SHIT
-	makeLuaSprite('sky', 'mindchamber/sky', -310, -100);
-	setLuaSpriteScrollFactor('sky', 0.8, 0.8);
-	scaleObject('sky', 1, 1);
+        makeBgIMAGES('buildings', 'buildings', -310, -100, 0.9, 1, false, 1, false)
 
-	makeLuaSprite('buildings', 'mindchamber/buildings', -310, -100);
-	setLuaSpriteScrollFactor('buildings', 0.9, 0.9);
-	scaleObject('buildings', 1, 1);
+        makebgANIMATED('buscoming', 'BusComing', 250, -9999, 0.9, 1.2, false, 1, false)
+        addbgANIMATION('buscoming', 'bus1', 'BusComing0', 24, false, 'bus1')
+        addbgANIMATION('buscoming', 'bus2', 'BusComing2', 24, false, 'bus1')
 
-	makeAnimatedLuaSprite('flickeringlights', 'mindchamber/FlickerLights', -325, -100);
-	luaSpriteAddAnimationByPrefix('flickeringlights', 'glow', 'Glow', 1, false);
-	luaSpriteAddAnimationByPrefix('flickeringlights', 'flicker', 'Flicker', 12, false);
-	luaSpritePlayAnimation('flickeringlights', 'glow');
+        makebgANIMATED('flickeringlights', 'FlickerLights', -325, -100, 0.95, 1, false, 0.1, false)
+        addbgANIMATION('flickeringlights', 'glow', 'Glow', 1, false, 'glow')
+        addbgANIMATION('flickeringlights', 'flicker', 'Flicker', 12, false, 'glow')
 
-	scaleObject('flickeringlights', 1, 1);
-	setLuaSpriteScrollFactor('flickeringlights', 0.95, 0.95);
-	setProperty('flickeringlights.alpha', 0.1);
+        makeBgIMAGES('floor', 'floor', -310, -100, 1, 1, false, 1, false)
+    
+        makebgANIMATED('bgUberkids', 'bgUberkids', 85, 250, 0.9, 1, false, 1, false)
+        addbgANIMATION('bgUberkids', 'idle', 'bguberkids0', 24, false, 'idle')
+        addbgANIMATION('bgUberkids', 'bus', 'bguberkidsBUS', 24, false, 'idle')
 
-	makeLuaSprite('floor', 'mindchamber/floor', -310, -100);
-	setLuaSpriteScrollFactor('floor', 1, 1);
-	scaleObject('floor', 1, 1);
+        makebgANIMATED('walkingUberkid', 'uberkidWalk', 750, 217, 1, 1, false, 1, false)
+        addbgANIMATION('walkingUberkid', 'run', 'walk', 24, true, 'run')
 
+        makebgANIMATED('boopingUberkid', 'uberkidShit', 500, 217, 1, 1, false, 1, false)
+        addbgANIMATION('boopingUberkid', 'idle', 'idle', 24, false, 'idle')
 
---BUS CUTSCENE SHIT
-    makeAnimatedLuaSprite('buscoming', 'mindchamber/BusComing', 250, -9999);
-    luaSpriteAddAnimationByPrefix('buscoming', 'bus1', 'BusComing0', 24, false);
-    luaSpriteAddAnimationByPrefix('buscoming', 'bus2', 'BusComing2', 24, false);
-    luaSpritePlayAnimation('buscoming', 'bus1');
-    scaleObject('buscoming', 1.2, 1.2);
-    setLuaSpriteScrollFactor('buscoming', 0.9, 0.9);
-    setProperty('buscoming.alpha', 1);
- 
-	makeAnimatedLuaSprite('bgUberkids', 'mindchamber/bgUberkids', 85, 250);
-	luaSpriteAddAnimationByPrefix('bgUberkids', 'idle', 'bguberkids0', 24, false);
-	luaSpriteAddAnimationByPrefix('bgUberkids', 'bus', 'bguberkidsBUS', 24, false);
-	luaSpritePlayAnimation('bgUberkids', 'idle');
-	scaleObject('bgUberkids', 1, 1);
-	setLuaSpriteScrollFactor('bgUberkids', 0.9, 0.9);
+        makebgANIMATED('UberkidCorpse', 'uberkidbf', 500, 225, 1, 1, false, 1, true)
+        addbgANIMATION('UberkidCorpse', 'die', 'diebf', 24, false, 'die')
 
-	makeAnimatedLuaSprite('frontbgUberkids', 'mindchamber/frontbgUberkids', -115, 300);
-	luaSpriteAddAnimationByPrefix('frontbgUberkids', 'idle', 'frontbguberkids0', 24, false);
-	luaSpriteAddAnimationByPrefix('frontbgUberkids', 'bus', 'frontbguberkidsBUS', 24, false);
-	luaSpritePlayAnimation('frontbgUberkids', 'idle');
-	scaleObject('frontbgUberkids', 1, 1);
-	setLuaSpriteScrollFactor('frontbgUberkids', 1.1, 1.1);
+        makebgANIMATED('uberkidbf', 'uberkidbf', -350, 217, 1, 1, false, 1, false)
+        addbgANIMATION('uberkidbf', 'run', 'walkbf', 24, true, 'run')
 
-	makeAnimatedLuaSprite('otherfrontbgUberkids', 'mindchamber/frontbgUberkids', 440, 300);
-	luaSpriteAddAnimationByPrefix('otherfrontbgUberkids', 'idle', 'frontbguberkids0', 24, false);
-	luaSpriteAddAnimationByPrefix('otherfrontbgUberkids', 'bus', 'frontbguberkidsBUS', 24, false);
-	luaSpritePlayAnimation('otherfrontbgUberkids', 'idle');
-	scaleObject('otherfrontbgUberkids', 1, 1);
-	setLuaSpriteScrollFactor('otherfrontbgUberkids', 1.1, 1.1);
-	setPropertyLuaSprite('otherfrontbgUberkids', 'flipX', true);
+        makebgANIMATED('DeaduberkidbfCorpse', 'uberkidbf', -100, 9999, 1, 1, false, 1, false)
+        addbgANIMATION('DeaduberkidbfCorpse', 'die', 'diebf', 24, false, 'die')
 
---UBERKIDS SHIT
-	makeAnimatedLuaSprite('walkingUberkid', 'mindchamber/uberkidWalk', 750, 217);
-	luaSpriteAddAnimationByPrefix('walkingUberkid', 'run', 'walk', 24, true);
-	luaSpritePlayAnimation('walkingUberkid', 'run');
-	setLuaSpriteScrollFactor('walkingUberkid', 1, 1);
+        makebgANIMATED('numbers', 'numbers', 580, 250, 1, 2, true, 0, false)
+        addbgANIMATION('numbers', '1', 'one', 24, true, '3')
+        addbgANIMATION('numbers', '2', 'two', 24, true, '3')
+        addbgANIMATION('numbers', '3', 'three', 24, true, '3')
 
-	makeAnimatedLuaSprite('boopinUberkid', 'mindchamber/uberkidShit', 500, 1000);
-	luaSpriteAddAnimationByPrefix('boopinUberkid', 'bop', 'idle', 24, false);
-	luaSpriteAddAnimationByPrefix('boopinUberkid', 'die', 'die', 24, false);
-	luaSpritePlayAnimation('boopinUberkid', 'bop');
-	setLuaSpriteScrollFactor('boopinUberkid', 1, 1);
+        makebgANIMATED('bulletfall', 'bulletfall', 170, 9999, 1, 1.25, true, 1, false)
+        addbgANIMATION('bulletfall', 'bulletfall', 'bulletfall', 24, false, 'bulletfall')
 
---BF SIDE UBERKID
-    makeAnimatedLuaSprite('uberkidbf', 'mindchamber/uberkidbf', -350, 217);
-    luaSpriteAddAnimationByPrefix('uberkidbf', 'run', 'walkbf', 24, true);
-    luaSpriteAddAnimationByPrefix('uberkidbf', 'die', 'diebf', 24, false);
-    luaSpritePlayAnimation('uberkidbf', 'run');
-    setLuaSpriteScrollFactor('uberkidbf', 1, 1);
+        makebgANIMATED('frontbgUberkids', 'frontbgUberkids', -180, 300, 1.1, 1.25, true, 1, false)
+        addbgANIMATION('frontbgUberkids', 'idle', 'frontbguberkids0', 24, false, 'idle')
+        addbgANIMATION('frontbgUberkids', 'bus', 'frontbguberkidsBUS', 24, false, 'idle')
 
+        makebgANIMATED('frontbgUberkidsSide', 'frontbgUberkids', 440, 300, 1.1, 1.25, true, 1, true)
+        addbgANIMATION('frontbgUberkidsSide', 'idle', 'frontbguberkids0', 24, false, 'idle')
+        addbgANIMATION('frontbgUberkidsSide', 'bus', 'frontbguberkidsBUS', 24, false, 'idle')
+    
+        offsetThing('UberkidCorpse', 0, 9999)
+        offsetThing('boopingUberkid', 0, 9999)
 
---COUNTDOWN NUMBER, YES MY CODE SUCKS BUT IT'LL WORK OK TRUST ME
-	makeAnimatedLuaSprite('numbers', 'mindchamber/numbers', 580, 250);
-	luaSpriteAddAnimationByPrefix('numbers', 'one', 'one', 24, true);
-	luaSpriteAddAnimationByPrefix('numbers', 'two', 'two', 24, true);
-	luaSpriteAddAnimationByPrefix('numbers', 'three', 'three', 24, true);
-
-	luaSpritePlayAnimation('numbers', 'three');
-	setLuaSpriteScrollFactor('numbers', 1, 1);
-	scaleObject('numbers', 2, 2);
-	setProperty('numbers.alpha', 0);
-
---
-	makeAnimatedLuaSprite('bulletfall', 'mindchamber/bulletfall', 170, 240);
-	luaSpriteAddAnimationByPrefix('bulletfall', 'bulletfall', 'bulletfall', 24, false);
-	scaleObject('bulletfall', 1.25, 1.25);
-	setProperty('bulletfall.y', 9999);
-
---STAGE BUILDING
-
-	addLuaSprite('sky', false);
-	addLuaSprite('buildings', false);
-	addLuaSprite('buscoming', false);
-	addLuaSprite('flickeringlights', false);
-	addLuaSprite('floor', false);
-
-	addLuaSprite('bgUberkids', false);
-
-	addLuaSprite('walkingUberkid', false);
-	addLuaSprite('boopinUberkid', false);
-	addLuaSprite('uberkidbf', false);
-
-	addLuaSprite('numbers', true);
-	addLuaSprite('bulletfall', true);
-	
-	addLuaSprite('frontbgUberkids', true);
-	addLuaSprite('otherfrontbgUberkids', true);
-
-	makeLuaText('debugText', 'ERROR DUMBASS', 0, 175, 150)
-	addLuaText('debugText')
-	setProperty('debugText.alpha', 0)
-end
-
-
-function onEvent(name, value1, value2)
-	--MAKE THE UBERKID START GOING
-    if name == 'makeuberkidRUN' then
-		if deathAnimPlaying == true then
-			didEmergencyCreate = true	
-			--setProperty('boopinUberkid.alpha', 0);
-			setProperty('boopinUberkid.x', 500)
-			setProperty('boopinUberkid.y', 1000)
-			uberkidDead = false
-			uberkidIsInFront = false	
-			
-		end
-		if uberkidDead == false and uberkidIsInFront == false  then
-			--setProperty('boopinUberkid.alpha', 0);
-			setProperty('boopinUberkid.y', 1000)
-			cancelTween('hegointoPico')
-			setProperty('walkingUberkid.x', 750)
-			doTweenX('hegointoPico', 'walkingUberkid', 500, 1, 'linear')
-		end
+        --makeLuaText('debugText', 'ERROR DUMBASS', 0, 175, 150)
+        --addLuaText('debugText')
+        --setProperty('debugText.alpha', 1)
     end
 
-	if name == 'Play Animation' then
-		if value1 == "weaponOut" then
-			if value2 == "BF" then
-				playSound('gunout', 1)
-			end
-		end
+    function onEvent(name, value1, value2)
 
-		if value1 == "weaponOut" then
-			if value2 == "Dad" then
-				playSound('micout', 1)
-			end
-		end
+        if name == 'makeuberkidRUN' and (not canShoot) then
+                doTheResetTweenThing('walkingUberkid', 'tweenUberkidPico', 750, 500, 1, 'linear', true, 'x')
+        end
+    
+        if name == 'Play Animation' then
+            if value1 == "weaponOut" then
+                if value2 == "BF" then
+                    playSound('gunout', 1)
+                else
+                    playSound('micout', 1)
+                end
+            end
+        end
+    
+        if name == 'bus' then
+            didthebusShit = true
+            StartBusShit(false)
+        end
+    
+        if name == 'endbus' then
+            StartBusShit(true)
+        end
+    
+        if name == 'bfattack' then
+            if difficulty == 0 then
+            setProperty('uberkidbf.x', -350)
+            cancelTween('BFuberkidTWEEN')
+            luaSpritePlayAnimation('uberkidbf', 'run');
+            doTweenX('BFuberkidTWEEN', 'uberkidbf', -100, (((60000/curBpm)*3)/1000) -0.05, 'linear')
+            end
+        end
+    end
 
-	end
+    --offsetThing(name, offsetX, offsetY)
 
-	if name == 'bus' then
-		InCutsceneBus = true
-		for i = 0, getProperty('playerStrums.length')-1 do
-			setPropertyFromGroup('playerStrums',i,'visible',false)
-		end
-		setProperty('healthBarBG.visible', false);
-		setProperty('healthBar.visible', false);
+    function StartBusShit(bool)
+        for i = 0, getProperty('playerStrums.length')-1 do
+            setPropertyFromGroup('playerStrums',i,'visible',bool)
+        end
+        setProperty('healthBarBG.visible', bool);
+        setProperty('healthBar.visible', bool);
+        if not bool then
+            characterPlayAnim('boyfriend', 'buscutscene', true);
+            setProperty('boyfriend.specialAnim', true);
+            characterPlayAnim('dad', 'bus', true);
+            setProperty('dad.specialAnim', true);
 
-		doTweenZoom('begin', 'camGame', '1.3', 1, 'quadOut')
+            setProperty('bgUberkids.x', -310)
+            setProperty('bgUberkids.y', 40)
+            luaSpritePlayAnimation('bgUberkids', 'bus');
 
-		characterPlayAnim('boyfriend', 'buscutscene', true);
-		setProperty('boyfriend.specialAnim', true);
+            offsetThing('frontbgUberkids', 300, 55)
+            offsetThing('frontbgUberkidsSide', 120, 49)
 
-		characterPlayAnim('dad', 'bus', true);
-		setProperty('dad.specialAnim', true);
+            luaSpritePlayAnimation('frontbgUberkids', 'bus');
+            luaSpritePlayAnimation('frontbgUberkidsSide', 'bus');
+    
+            luaSpritePlayAnimation('buscoming', 'bus1');
+            setProperty('buscoming.y', 150)
 
-		setProperty('bgUberkids.x', -310)
-		setProperty('bgUberkids.y', 40)
-		luaSpritePlayAnimation('bgUberkids', 'bus');
+        else
+            setProperty('bgUberkids.y', -9999)
+            setProperty('buscoming.y', -9999)
+        end
+    end
 
-		setProperty('frontbgUberkids.offset.x', 269);
-		setProperty('frontbgUberkids.offset.y', 49);
-		setProperty('otherfrontbgUberkids.offset.x', 120);
-		setProperty('otherfrontbgUberkids.offset.y', 49);
-		luaSpritePlayAnimation('frontbgUberkids', 'bus');
-	    luaSpritePlayAnimation('otherfrontbgUberkids', 'bus');
-
-		luaSpritePlayAnimation('buscoming', 'bus1');
-		setProperty('buscoming.y', 150)
-	
-
-	end
-
-	if name == 'endbus' then
-		setProperty('bgUberkids.y', -9999)
-		setProperty('buscoming.y', -9999)
-		for i = 0, getProperty('playerStrums.length')-1 do
-			setPropertyFromGroup('playerStrums',i,'visible',true)
-		end
-		setProperty('healthBarBG.visible', true);
-		setProperty('healthBar.visible', true);
-
-		doTweenZoom('end', 'camGame', '1.2', 1, 'quadOut')
-
-	end
-
-	if name == 'bfattack' then
-		if difficulty == 0 then
-		setProperty('uberkidbf.x', -350)
-		cancelTween('hegointoBF')
-		luaSpritePlayAnimation('uberkidbf', 'run');
-	    doTweenX('hegointoBF', 'uberkidbf', -100, (((60000/curBpm)*3)/1000) -0.05, 'linear')
-		end
-	end
-end
-
+    
 function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'BulletNote' then
 
-		if uberkidIsInFront == false or uberkidIsInFront == true and uberkidDead == true then
+		if not canShoot then
 			playSound('reload', 1)
-			for i = 1, 10, 1 do
-				characterPlayAnim('boyfriend', 'reload', true);
-				setProperty('boyfriend.specialAnim', true);
-			end
-		end
-
-		if uberkidIsInFront == true and uberkidDead == false then
-		
-			cancelTimer('countForDEATH')
-
-			CountDownOfDeath = 6
-			uberkidDead = true
+			characterPlayAnim('boyfriend', 'reload', true);
+			setProperty('boyfriend.specialAnim', true);
+        else
+            canShoot = false
+            cancelTimer('StartCountdownStuff')
 
 			playSound('gunshot', 0.7)
-	
-			--cameraFlash('camGame', 'ffffff', 0.15, true);
-			cameraShake('camGame', 0.015, 0.15);
-	
+	        cameraShake('camGame', 0.015, 0.15);
 			playSound('blood', 1)
-
-			--I OUTSMART BULLET
 	        
 	        luaSpritePlayAnimation('bulletfall', 'bulletfall');
 			setProperty('bulletfall.y', 240);
-		    --playSound('bulletfall', 1)
 
-			
-			for i = 1, 10, 1 do
-				characterPlayAnim('boyfriend', 'shoot', true);
-				setProperty('boyfriend.specialAnim', true);
-				deathAnimPlaying = true
-				setProperty('boopinUberkid.x', 450)
-				luaSpritePlayAnimation('boopinUberkid', 'die');
-			end
+			characterPlayAnim('boyfriend', 'shoot', true);
+			setProperty('boyfriend.specialAnim', true);
 
-			doTweenAlpha('AppearCoundownNumbers', 'numbers', '0', 0.3, 'linear')
-			doTweenY('AppearCoundownNumbersY', 'numbers', '250', 0.3, 'linear')
+            offsetThing('boopingUberkid', 0, 9999)
+            offsetThing('UberkidCorpse', 0, 0)
+            luaSpritePlayAnimation('UberkidCorpse', 'die');
 
-			runTimer('waitfortheDeadAnim', 0.7, 1)
+            doTweenAlpha('HideCoundownNumbersAlphaTween', 'numbers', '0', 0.3, 'linear')
+			doTweenY('HideCoundownNumbersYTween', 'numbers', '250', 0.3, 'linear')
 
 		end
 
@@ -295,198 +220,156 @@ end
 
 --CHECKS FOR WHEN THE UBERKID DEATH ANIMATION IS DONE
 function onTimerCompleted(tag, loops, loopsLeft)
-	if tag == 'waitfortheDeadAnim' then
-		--doTweenX('yeahHeDead1', 'boopinUberkid', 2000, 0.5, 'linear')
-
-		if didEmergencyCreate == false then
-			deathAnimPlaying = false
-			--setProperty('boopinUberkid.alpha', 0);
-			setProperty('boopinUberkid.y', 1000)
-			setProperty('boopinUberkid.x', 500)
-			for i = 1, 10, 1 do
-				uberkidDead = false
-				uberkidIsInFront = false	
-			end
-		end
-		if didEmergencyCreate == true then
-			deathAnimPlaying = false
-			didEmergencyCreate = false
-		end
-	end
-
-	if tag == 'countForDEATH' then
-
-		setProperty('numbers.scale.y', 3);
-		setProperty('numbers.scale.x', 3);
-
-		doTweenX('numbersxsize', 'numbers.scale', 2, 0.3, circInOut)
-		doTweenY('numbersysize', 'numbers.scale', 2, 0.3, circInOut)
-
-		CountDownOfDeath = CountDownOfDeath - 1
-
-		--YANDERE DEV TYPE CODE, TOO LAZY TO MAKE IT BETTER
-		if CountDownOfDeath == 1 then
-			luaSpritePlayAnimation('numbers', 'one');
-		end
-		if CountDownOfDeath == 2 then
-			luaSpritePlayAnimation('numbers', 'two');
-		end
-		if CountDownOfDeath == 3 then
-			luaSpritePlayAnimation('numbers', 'three');
-		end
-
-		if CountDownOfDeath < 4 then
-			if CountDownOfDeath > 0 then
-				doTweenAlpha('AppearCoundownNumbers', 'numbers', '1', 0.3, 'linear')
-				doTweenY('AppearCoundownNumbersY', 'numbers', '150', 0.3, 'linear')
-				playSound('countdown', 1)
-			end
-		end
-	end
-
 	if tag == 'FlickerLights' then
 		luaSpritePlayAnimation('flickeringlights', 'flicker');
+	end
+
+    if tag == 'StartCountdownStuff' then
+
+        makeboopAnimationTweens('numbers', 2, 2, 3, 3, 0.3, 'circInOut')
+        luaSpritePlayAnimation('numbers', loopsLeft);
+
+		if (loopsLeft < 4) and (loopsLeft > 0)  then
+				doTweenAlpha('AppearCoundownNumbersAlphaTween', 'numbers', '1', 0.3, 'linear')
+				doTweenY('AppearCoundownNumbersYTween', 'numbers', '150', 0.3, 'linear')
+				playSound('countdown', 1)
+		end
+        if (loopsLeft == 0) and canShoot then
+            setProperty('health', -500)
+        end
+    
 	end
 end
 
 function onTweenCompleted(tag)
 
-	--STUFF WHEN UBERKID IS IN FRONT OF PICO
-	if tag == 'hegointoPico' then
-		uberkidDead = false
-		uberkidIsInFront = true
-
-		--START TIMER
-		runTimer('countForDEATH', 1.069, 6)
-
-		cancelTween('hegointoPico')
-		setProperty('walkingUberkid.x', 750)
-		setProperty('boopinUberkid.y', 217)
-		--setProperty('boopinUberkid.alpha', 1);
-	end
-
-	if tag == 'hegointoBF' then
-		cancelTween('hegointoBF')
+	if tag == 'BFuberkidTWEEN' then
+        setProperty('uberkidbf.x', -350)
+        cancelTween('BFuberkidTWEEN')
 		characterPlayAnim('dad', 'micattack', true);
 		setProperty('dad.specialAnim', true);
 
 		playSound('throwmic', 1)
+        playSound('blood', 1)
 		cameraShake('camGame', 0.015, 0.15);
-	    playSound('blood', 1)
 		
-		luaSpritePlayAnimation('uberkidbf', 'die');
+        setProperty('DeaduberkidbfCorpse.y', 217)
+		luaSpritePlayAnimation('DeaduberkidbfCorpse', 'die');
 	end
+
+    if tag == 'tweenUberkidPico' then
+        canShoot = true
+        offsetThing('boopingUberkid', 0, 0)
+        doTheResetTweenThing('walkingUberkid', 'tweenUberkidPico', 750, 500, 1, 'linear', false, 'x')
+        runTimer('StartCountdownStuff', 1, 6)
+    end
 
 end
 
-
 function onBeatHit()
 	
-	--MAKES SURE TO NOT BOP WHILE BEING DEAD
-	if InCutsceneBus == false then
-		luaSpritePlayAnimation('bgUberkids', 'idle');
-		luaSpritePlayAnimation('frontbgUberkids', 'idle');
-		luaSpritePlayAnimation('otherfrontbgUberkids', 'idle');
-		
-	end
-	if uberkidDead == false then
-		luaSpritePlayAnimation('boopinUberkid', 'bop');
-	end
+    idleBgGuys()
 
 	if curBeat % 4 == 0 then
         if math.random(1, 50) <= 15 then
 			runTimer('FlickerLights', math.random(0.1, 0.6), math.random(1, 4))
         end
     end
-
 end
 
 function onUpdate()
-
-	if getProperty('uberkidbf.animation.curAnim.name') == 'die' and getProperty('uberkidbf.animation.curAnim.finished') == true then
-	    setProperty('uberkidbf.x', -350)
-	end
-
-	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F10') then
-
-		setProperty('debugText.alpha', 0)
-	end	
-	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F9') then
-
-		
-		setProperty('debugText.alpha', 1)
-	end
-
-	if CountDownOfDeath == 0 then
-		if uberkidDead == false then
-			setProperty('health', -500)
-		end
-	end
-
+    --setTextString('debugText', canShoot)
 end	
 
-function onCountdownTick(counter)
-
-	luaSpritePlayAnimation('bgUberkids', 'idle');
-	luaSpritePlayAnimation('frontbgUberkids', 'idle');
-	luaSpritePlayAnimation('otherfrontbgUberkids', 'idle');
-
-	if counter == 3 then--GO!
---SHITTY COLOR TWEENS
-		doTweenColor('nighttimebaby', 'boyfriend', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby2', 'dad', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby3', 'floor', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby4', 'buildings', '4B45A5', 90, 'linear')
-
-
-		doTweenColor('nighttimebaby5', 'sky', '2B218A', 90, 'linear')
-
-		doTweenColor('nighttimebaby6', 'bgUberkids', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby7', 'walkingUberkid', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby8', 'boopinUberkid', '4B45A5', 90, 'linear')
-
-		
-		doTweenAlpha('nighttimebaby9', 'flickeringlights', 0.15, 90, 'linear')
-
-		doTweenColor('nighttimebaby10', 'buscoming', '4B45A5', 90, 'linear')
-
-		doTweenColor('nighttimebaby11', 'bulletfall', '4B45A5', 90, 'linear')
-
-		doTweenColor('nighttimebaby12', 'uberkidbf', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby13', 'frontbgUberkids', '4B45A5', 90, 'linear')
-		doTweenColor('nighttimebaby14', 'otherfrontbgUberkids', '4B45A5', 90, 'linear')
-
-		
-	end
+function onCountdownTick()
+    idleBgGuys()
 end
 
-function onUpdatePost()
-	--This code FUCKING SUCKS but for some reason I cant put bools in the text string so fuck you
-uberkidDead4text = 'ERROR, YOU SUCK'
-uberkidIsInFront4text = 'ERROR, YOU SUCK'
-deathAnimPlaying4text = 'ERROR, YOU SUCK'
-didEmergencyCreate4text = 'ERROR, YOU SUCK'
-
-if uberkidDead == true then
-	uberkidDead4text = 'Dead Kid: true'
-else
-	uberkidDead4text = 'Dead Kid: false'
-end
-if uberkidIsInFront == true then
-	uberkidIsInFront4text = 'In Front: true'
-else
-	uberkidIsInFront4text = 'In Front: false'
-end
-if deathAnimPlaying == true then
-	deathAnimPlaying4text = 'Death Anim: true'
-else
-	deathAnimPlaying4text = 'Death Anim: false'
-end
-if didEmergencyCreate == true then
-	didEmergencyCreate4text = 'Emergency: true'
-else
-	didEmergencyCreate4text = 'Emergency: false'
+function onSongStart()
+    precacheShit()
+    coolNightTweens(90, '4B45A5', 'linear')
 end
 
-	setTextString('debugText', uberkidDead4text..'\n'..uberkidIsInFront4text..'\n'..deathAnimPlaying4text..'\n'..didEmergencyCreate4text..'\n'..'Countdown: '..CountDownOfDeath..'\n')
+function coolNightTweens(time, color, tweentype)
+
+    doTweenColor('SkyTween', 'sky', '2B218A', time, tweentype)
+    doTweenAlpha('LightsTween', 'flickeringlights', 0.15, time, tweentype)
+    
+    for i = 1, #shitToTweenCOLOR do
+        doTweenColor('nightTimeTween'..i, shitToTweenCOLOR[i][1], color, time, tweentype)
+    end
+end
+
+function idleBgGuys()
+    for i = 1, #guysWithIdles do
+        if not guysWithIdles[i][3] then
+            luaSpritePlayAnimation(guysWithIdles[i][1], guysWithIdles[i][2])
+        else
+            if not didthebusShit then
+                luaSpritePlayAnimation(guysWithIdles[i][1], guysWithIdles[i][2])
+            end
+        end
+    end
+end
+
+function precacheShit()
+        for i = 1, #soundsPrecache do
+            precacheImage(imagePrecache[i][1])
+        end
+
+        for i = 1, #soundsPrecache do
+            precacheSound(soundsPrecache[i][1])
+        end
+end
+
+function makeBgIMAGES(name, foldername, x, y, scroll, scale, front, alpha, flip)
+    makeLuaSprite(name, 'mindchamber/'..foldername, x, y);
+    setLuaSpriteScrollFactor(name, scroll, scroll);
+    scaleObject(name, scale, scale);
+    setProperty(name..'.alpha', alpha);
+    setPropertyLuaSprite(name, 'flipX', flip);
+    addLuaSprite(name, front);
+end
+
+function makebgANIMATED(name, foldername, x, y, scroll, scale, front, alpha, flip)
+    makeAnimatedLuaSprite(name, 'mindchamber/'..foldername, x, y);
+    setLuaSpriteScrollFactor(name, scroll, scroll);
+    scaleObject(name, scale, scale);
+    setProperty(name..'.alpha', alpha);
+    setPropertyLuaSprite(name, 'flipX', flip);
+    addLuaSprite(name, front);
+end
+
+function addbgANIMATION(name, animationName, animationNameXML, framerate, loop, defaultAnimation)
+    luaSpriteAddAnimationByPrefix(name, animationName, animationNameXML, framerate, loop);
+    luaSpritePlayAnimation(name, defaultAnimation);
+end
+
+function offsetThing(name, offsetX, offsetY)
+    setProperty(name..'.offset.x', offsetX);
+    setProperty(name..'.offset.y', offsetY);
+end
+
+function doTheResetTweenThing(guyname, tweenname, ogcoord, newcoord, time, tweentype, shouldtween, typeXY)
+    cancelTween(tweenname)
+    if typeXY == 'x' then
+        setProperty(guyname..'.x', ogcoord)
+    else
+        setProperty(guyname..'.y', ogcoord)
+    end
+    
+    if shouldtween then
+        if typeXY == 'x' then
+            doTweenX(tweenname, guyname, newcoord, time, tweentype)
+        else
+            doTweenY(tweenname, guyname, newcoord, time, tweentype)
+        end
+    end
+end
+
+function makeboopAnimationTweens(name, ogx, ogy, bigx, bigy, time, tweentype)
+    setProperty(name..'.scale.x', bigx);
+    setProperty(name..'.scale.y', bigy);
+    doTweenX(name..'xboopsizetween', name..'.scale', ogx, time, tweentype)
+    doTweenY(name..'yboopsizetween', name..'.scale', ogy, time, tweentype)
 end

@@ -9,8 +9,8 @@ local initialMiddleScroll
 --Name, BarX, BarY, Hide most shit, Force MiddleScroll Settings, Use Black bars, Allow Debug Mode, Lines of debug mode, Flip Health bar
 
 local setupshit = {
-    {'Freaky-Saturday', 80, 0, true, true, true, true, 4, false},
-    {'penilian', 0, 0, true, true, true, true, 1, true},
+    {'Freaky-Saturday', 80, 0, true, true, true, false, 4, false},
+    {'penilian', 0, 0, true, true, true, false, 1, true},
     
 };
 

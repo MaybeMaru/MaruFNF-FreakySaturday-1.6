@@ -82,10 +82,10 @@
 				104,
 				226
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT-alt",
-			"loop": false,
+			"indices": [],
 			"name": "ALTLEFT"
 		},
 		{
@@ -93,10 +93,10 @@
 				71,
 				120
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN-alt",
-			"loop": false,
+			"indices": [],
 			"name": "ALTDOWN"
 		},
 		{
@@ -104,10 +104,10 @@
 				82,
 				212
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singUP-alt",
-			"loop": false,
+			"indices": [],
 			"name": "ALTUP"
 		},
 		{
@@ -115,10 +115,10 @@
 				24,
 				186
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT-alt",
-			"loop": false,
+			"indices": [],
 			"name": "ALTRIGHT"
 		}
 	],

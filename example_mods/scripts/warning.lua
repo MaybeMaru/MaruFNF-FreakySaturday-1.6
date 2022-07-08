@@ -29,7 +29,7 @@ function onCreatePost()
 		
         playMusic('offsetSong', 1);
 
-        makeLuaSprite('optionsMenuBG', 'generalshit/ngTransition', 0, 0);
+        makeLuaSprite('optionsMenuBG', 'generalshit/ngTransition', -50, 0);
         addLuaSprite('optionsMenuBG');
 
 		makeLuaText('warningText', 'WARNING!', 0, 0);

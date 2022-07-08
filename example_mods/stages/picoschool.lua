@@ -1,11 +1,22 @@
 
-local InCutscenePenis = false
+didthepenisShit = false
 
-local flashinglights = false
+flashinglights = false
+
+guysWithIdles = {
+    {'punkguy', 'idle', true},
+	{'coolguy', 'idle', true},
+}
+
+soundsPrecache = {
+    {},
+}
+
+imagePrecache = {
+    {},
+}
 
 function onCreate()
-
-	
 
 	initSaveData('flashinglights', 'FreakySaturday')
 	flashinglights = getDataFromSave('flashinglights', 'hasflashinglights')
@@ -16,101 +27,36 @@ function onCreate()
 	setPropertyFromClass('GameOverSubstate', 'endSoundName', 'gameOverEnd'); --put in mods/music/
 
 
---ACTUAL SCRIPT
+    makeBgIMAGES('bgBack', 'Back', -530, -120, 1, 1.2, false, 1, false)
 
-	makeLuaSprite('redflash','cassandra/redflash',150,-25)
-	setLuaSpriteScrollFactor('redflash',160,90)
-	addLuaSprite('redflash',true)
-	scaleObject('redflash',1.5,1.5)
+	makebgANIMATED('blood', 'blood', 525, 325, 1, 1.35, false, 0, false)
+	addbgANIMATION('blood', 'cutscene', 'blood', 24, false, 'blood')
+
+	makebgANIMATED('punkguy', 'punkguy', 520, 240, 1, 1.25, true, 1, false)
+	addbgANIMATION('punkguy', 'idle', 'BopGuy1_Idle', 24, false, 'idle')
+	addbgANIMATION('punkguy', 'cutscene', 'PUNKGUY_CUTSCENE', 24, false, 'idle')
+
+	makebgANIMATED('coolguy', 'coolguy', 610, 260, 1, 1.25, true, 1, false)
+	addbgANIMATION('coolguy', 'idle', 'CoolGuy2_Idle', 24, false, 'idle')
+	addbgANIMATION('coolguy', 'cutscene', 'COOLGUY_CUTSCENE', 24, false, 'idle')
+
+    makeBgIMAGES('balcony', 'balcony', -265, 260, 1, 1.2, false, 1, false)
+	setObjectOrder('balcony', getObjectOrder('boyfriendGroup') - 1)
+
+	makeBgIMAGES('redflash', 'redflash', 150, -25, 1, 1.5, true, 0, false)
 	setObjectCamera('redflash', 'camHUD');
-	setProperty('redflash.alpha', 0);
 	setObjectOrder("redflash", getObjectOrder('notes') + 1)
 
-
-
---REF FOR POSITIONS
-	makeLuaSprite('ref', 'cassandra/ref', 0, 0);
-	setLuaSpriteScrollFactor('ref', 1, 1);
-	scaleObject('ref', 1.2, 1.2);
-
-	makeLuaSprite('balcony', 'cassandra/balcony', -265, 260);
-	setLuaSpriteScrollFactor('balcony', 1, 1);
-	scaleObject('balcony', 1.2, 1.2);
-
-	makeLuaSprite('bgBack', 'cassandra/Back', -530, -120);
-	setLuaSpriteScrollFactor('bgBack', 1, 1);
-	scaleObject('bgBack', 1.2, 1.2);
-
-	makeAnimatedLuaSprite('blood', 'cassandra/blood', 525, 325);
-	luaSpriteAddAnimationByPrefix('blood', 'cutscene', 'blood', 24, false);
-	setProperty('blood.alpha', 0)
-	
-	scaleObject('blood', 1.35, 1.35);
-
-	makeAnimatedLuaSprite('punkguy', 'cassandra/punkguy', 520, 240);
-	luaSpriteAddAnimationByPrefix('punkguy', 'idle', 'BopGuy1_Idle', 24, false);
-	luaSpriteAddAnimationByPrefix('punkguy', 'cutscene', 'PUNKGUY_CUTSCENE', 24, false);
-	luaSpritePlayAnimation('punkguy', 'idle');
-	scaleObject('punkguy', 1.25, 1.25);
-
-	makeAnimatedLuaSprite('coolguy', 'cassandra/coolguy', 610, 260);
-	luaSpriteAddAnimationByPrefix('coolguy', 'idle', 'CoolGuy2_Idle', 24, false);
-	luaSpriteAddAnimationByPrefix('coolguy', 'cutscene', 'COOLGUY_CUTSCENE', 24, false);
-	luaSpritePlayAnimation('coolguy', 'idle');
-	scaleObject('coolguy', 1.25, 1.25);
-
-
-	makeLuaSprite('bgBack', 'cassandra/Back', -530, -120);
-	setLuaSpriteScrollFactor('bgBack', 1, 1);
-	scaleObject('bgBack', 1.2, 1.2);
-
-	--setProperty('bgBack.alpha', .5)
-
-	addLuaSprite('ref', false);
-
-	addLuaSprite('bgBack', false);
-
-	
-	addLuaSprite('blood', false);
-
-	addLuaSprite('punkguy', true);
-	addLuaSprite('coolguy', true);
-
-	addLuaSprite('balcony', false);
-
-	setObjectOrder("balcony", getObjectOrder('boyfriendGroup') - 1)
 end
 
 function onEvent(name, value1, value2)
 	if name == 'penis' then
-		InCutscenePenis = true
-		for i = 0, getProperty('playerStrums.length')-1 do
-			setPropertyFromGroup('playerStrums',i,'visible',false)
-		end
-		setProperty('healthBarBG.visible', false);
-		setProperty('healthBar.visible', false);
-
-		characterPlayAnim('dad', 'peniscutscene', true);
-		setProperty('dad.specialAnim', true);
-
-		setProperty('punkguy.x', 510)
-		setProperty('punkguy.y', 230)
-		luaSpritePlayAnimation('punkguy', 'cutscene');
-		luaSpritePlayAnimation('coolguy', 'cutscene');
-
-		setProperty('blood.alpha', 1)
-		luaSpritePlayAnimation('blood', 'cutscene');
+		didthepenisShit = true
+		Startcutsceneshit(false)
 	end
 
 	if name == 'endpenis' then
-		--InCutscenePenis = false
-		for i = 0, getProperty('playerStrums.length')-1 do
-			setPropertyFromGroup('playerStrums',i,'visible',true)
-		end
-		setProperty('healthBarBG.visible', true);
-		setProperty('healthBar.visible', true);
-		setObjectOrder("punkguy", getObjectOrder('dadGroup') - 1)
-		setObjectOrder("coolguy", getObjectOrder('dadGroup') - 1)
+		Startcutsceneshit(true)
 	end
 
 	if name == 'redflash' then
@@ -122,8 +68,7 @@ function onEvent(name, value1, value2)
 			if value1 == '' then
 				setProperty('redflash.alpha', 1);
 				doTweenAlpha('redflash', 'redflash', '0', 0.75, 'quadOut')
-			end
-			if value1 == 'long' then
+			else
 				setProperty('redflash.alpha', 0);
 				doTweenAlpha('redflashlongIN', 'redflash', '1', 0.6, 'quadOut')
 			end
@@ -138,10 +83,6 @@ function onEvent(name, value1, value2)
 	end
 end
 
-function goodNoteHit(id, noteData, noteType, isSustainNote)
-	
-end
-
 function opponentNoteHit(id, direction, noteType, isSustainNote)
 	if InCutscenePenis ==  true then
 		flashinglights = getDataFromSave('flashinglights', 'hasflashinglights')
@@ -151,56 +92,122 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 	end
 end
 
-function onTimerCompleted(tag, loops, loopsLeft)
-
-end
-
-
 function onTweenCompleted(tag)
 	if tag == 'redflashlongIN' then
 		doTweenAlpha('redflashlongOUT', 'redflash', '0', 0.6, 'quadOut')
 	end
 end
 
-
 function onBeatHit()
-	if InCutscenePenis == false then
-		luaSpritePlayAnimation('punkguy', 'idle');
-		luaSpritePlayAnimation('coolguy', 'idle');
-	end
+	idleBgGuys()
+
 
 end
 
 function onCountdownTick(counter)
-	luaSpritePlayAnimation('punkguy', 'idle');
-	luaSpritePlayAnimation('coolguy', 'idle');
+	idleBgGuys()
 end
 
-function onUpdate()
+function onUpdatePost(elapsed)
 
-	if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F10') then
-		removeLuaText('FL_Toggle', false)
-    end	
-    if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F9') then
+	dothiscrap = false
 
-		makeLuaText('FL_Toggle', 'ERROR DUMB SHIT', 0, 175, 150)
-
-		addLuaText('FL_Toggle');
-
+	if dothiscrap then
+		if not didthepenisShit  then
+			SexZooms('camGame', 0.2, 'linear', 1.2, 2)
+		else
+			SexZooms('camGame', 0.1, 'linear', 1.2, 1.3)
+		end
 	end
+end
+
+function SexZooms(whatcam, time, tweentype, zoom1, zoom2)
+	if mustHitSection then
+		cancelTween('thecoolershituhhhzoom')
+		doTweenZoom('thecoolershituhhhzoom', whatcam, zoom1, time, tweentype)
+    else
+		cancelTween('shituhhhzoom')
+		doTweenZoom('shituhhhzoom', whatcam, zoom2, time, tweentype)
+    end
+end
+
+function Startcutsceneshit(bool)
+	for i = 0, getProperty('playerStrums.length')-1 do
+		setPropertyFromGroup('playerStrums',i,'visible',bool)
+	end
+	setProperty('healthBarBG.visible', bool);
+	setProperty('healthBar.visible', bool);
+
+	if not bool then
+		characterPlayAnim('dad', 'peniscutscene', true);
+		setProperty('dad.specialAnim', true);
+
+		offsetThing('punkguy', -10, -10)
+		luaSpritePlayAnimation('punkguy', 'cutscene');
+		luaSpritePlayAnimation('coolguy', 'cutscene');
 	
-	setTextString('FL_Toggle', flashinglights4text)
+		setProperty('blood.alpha', 1)
+		luaSpritePlayAnimation('blood', 'cutscene');
+	else
+		setObjectOrder("punkguy", getObjectOrder('dadGroup') - 1)
+		setObjectOrder("coolguy", getObjectOrder('dadGroup') - 1)
+	end
 
 end
 
-function onUpdatePost()
-	--This code FUCKING SUCKS but for some reason I cant put bools in the text string so fuck you
-	flashinglights4text = 'ERROR, YOU SUCK'
-
-if flashinglights == true then
-	flashinglights4text = 'Flashing Lights: true'
-else
-	flashinglights4text = 'Flashing Lights: false'
+function idleBgGuys()
+    for i = 1, #guysWithIdles do
+        if not guysWithIdles[i][3] then
+            luaSpritePlayAnimation(guysWithIdles[i][1], guysWithIdles[i][2])
+        else
+            if not didthepenisShit then
+                luaSpritePlayAnimation(guysWithIdles[i][1], guysWithIdles[i][2])
+            end
+        end
+    end
 end
 
+function precacheShit()
+        for i = 1, #soundsPrecache do
+            precacheImage(imagePrecache[i][1])
+        end
+
+        for i = 1, #soundsPrecache do
+            precacheSound(soundsPrecache[i][1])
+        end
+end
+
+function makeBgIMAGES(name, foldername, x, y, scroll, scale, front, alpha, flip)
+    makeLuaSprite(name, 'cassandra/'..foldername, x, y);
+    setLuaSpriteScrollFactor(name, scroll, scroll);
+    scaleObject(name, scale, scale);
+    setProperty(name..'.alpha', alpha);
+    setPropertyLuaSprite(name, 'flipX', flip);
+    addLuaSprite(name, front);
+end
+
+function makebgANIMATED(name, foldername, x, y, scroll, scale, front, alpha, flip)
+    makeAnimatedLuaSprite(name, 'cassandra/'..foldername, x, y);
+    setLuaSpriteScrollFactor(name, scroll, scroll);
+    scaleObject(name, scale, scale);
+    setProperty(name..'.alpha', alpha);
+    setPropertyLuaSprite(name, 'flipX', flip);
+    addLuaSprite(name, front);
+end
+
+function addbgANIMATION(name, animationName, animationNameXML, framerate, loop, defaultAnimation)
+    luaSpriteAddAnimationByPrefix(name, animationName, animationNameXML, framerate, loop);
+    luaSpritePlayAnimation(name, defaultAnimation);
+end
+
+function offsetThing(name, offsetX, offsetY)
+    setProperty(name..'.offset.x', offsetX);
+    setProperty(name..'.offset.y', offsetY);
+end
+
+function makeboopAnimationTweens(name, ogx, ogy, bigx, bigy, time, tweentype)
+    setProperty(name..'.scale.x', bigx);
+    setProperty(name..'.scale.y', bigy);
+    doTweenX(name..'xboopsizetween', name..'.scale', ogx, time, tweentype)
+    doTweenY(name..'yboopsizetween', name..'.scale', ogy, time, tweentype)
 end
